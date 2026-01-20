@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>Media Query Demo</title>
+<style>
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.box {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* ✅ Desktop */
+@media (min-width: 1025px) {
+  .box {
+    background: #2ecc71;
+  }
+
+  #device::after {
+    content: " Desktop (>=1025px)";
+  }
+}
+
+/* ✅ Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .box {
+    background: #3498db;
+  }
+
+  #device::after {
+    content: " Tablet (768px - 1024px)";
+  }
+}
+
+/* ✅ Mobile */
+@media (max-width: 767px) {
+  .box {
+    background: #e74c3c;
+  }
+
+  #device::after {
+    content: " Mobile (<768px)";
+  }
+}
+</style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>Media Query Example</h1>
+    <p id="device">กำลังแสดงบนหน้าจอ</p>
+  </div>
+
+</body>
+</html>
